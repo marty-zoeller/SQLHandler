@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SQLHandler</name>
+    </assembly>
+    <members>
+        <member name="T:DatabaseHelper.ISQLHandler">
+            <summary>
+            Interface for SQLHandler class
+            </summary>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteQuery(System.String,System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="databaseName">The name of the database where the stored procedure resides</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteNonQuery(System.String,System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="databaseName">The name of the database where the stored procedure resides</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.GetConnectionString(System.String,System.String)">
+            <summary>
+            Builds and returns a database connection string
+            </summary>
+            <param name="databaseName">The name of the database to build the connection string to</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns></returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="cfServer">Configuration file element name for the database server name</param>
+            <param name="cfDatabase">Configuration file element name for the database name</param>
+            <param name="cfUser">Configuration file element name for the database user name</param>
+            <param name="cfPassword">Configuration file element name for the database user's password</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="cfServer">Configuration file element name for the database server name</param>
+            <param name="cfDatabase">Configuration file element name for the database name</param>
+            <param name="cfUser">Configuration file element name for the database user name</param>
+            <param name="cfPassword">Configuration file element name for the database user's password</param>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteNonQuery(System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="connectionString">The database connection string</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteQuery(System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="connectionString">The database connection string</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String)">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+        </member>
+        <member name="M:DatabaseHelper.ISQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String)">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="T:DatabaseHelper.ParameterSQL">
+            <summary>
+            Parameters that are to be passed to a stored procedure.
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.ParameterSQL.Name">
+            <summary>
+            REQUIRED - Get or Set - The name of the parameter. You must include the "@"
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.ParameterSQL.Value">
+            <summary>
+            REQUIRED - Get or Set - The value to pass to the SQL stored procedure (may be null)
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.ParameterSQL.Direction">
+            <summary>
+            OPTIONAL - Get or Set - The direction of the parameter (System.Data.ParameterDirection).  Is it Input, Output, Input and Output or a Return Value.
+                                    This will be set for you.
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.ParameterSQL.DataType">
+            <summary>
+            OPTIONAL - Get or Set - The data type of the parameter (System.Data.SqlDbType)
+                                    This will be set for you.
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.ParameterSQL.Size">
+            <summary>
+            OPTIONAL - Get or Set - The size or length of the parameter
+                                    This will be set for you.
+            </summary>
+        </member>
+        <member name="T:DatabaseHelper.SQLHandler">
+            <summary>
+            Used for retriving data from a database
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.SQLHandler.ProcedureReturn">
+            <summary>
+            The value returned from the last Stored Procedure call
+            </summary>
+        </member>
+        <member name="P:DatabaseHelper.SQLHandler.Parameters">
+            <summary>
+            The updateed parameters after the Stored Procedure call
+            </summary>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteQuery(System.String,System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="databaseName">The name of the database where the stored procedure resides</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteNonQuery(System.String,System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="databaseName">The name of the database where the stored procedure resides</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.GetConnectionString(System.String,System.String)">
+            <summary>
+            Builds and returns a database connection string
+            </summary>
+            <param name="databaseName">The name of the database to build the connection string to</param>
+            <param name="databaseLevel">The level of data (Dev, Test, UET, Live)</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns></returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="cfServer">Configuration file element name for the database server name</param>
+            <param name="cfDatabase">Configuration file element name for the database name</param>
+            <param name="cfUser">Configuration file element name for the database user name</param>
+            <param name="cfPassword">Configuration file element name for the database user's password</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="cfServer">Configuration file element name for the database server name</param>
+            <param name="cfDatabase">Configuration file element name for the database name</param>
+            <param name="cfUser">Configuration file element name for the database user name</param>
+            <param name="cfPassword">Configuration file element name for the database user's password</param>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteNonQuery(System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="connectionString">The database connection string</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteQuery(System.String,System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="connectionString">The database connection string</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteNonQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String)">
+            <summary>
+            Execute a stored procedure that does not return any data
+            </summary>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ExecuteQuery(System.String,System.Collections.Generic.List{DatabaseHelper.ParameterSQL},System.String)">
+            <summary>
+            Execute a stored procedure and returns all data returned by the procedure in a Dataset
+            </summary>
+            <param name="cfConStr">Configuration file element name for the connection string</param>
+            <param name="parameters">The list of parameters to pass to the stored procedure</param>
+            <param name="storedProcedureName">The name of the stored porocedure to execute</param>
+            <returns>(DataSet)</returns>
+        </member>
+        <member name="M:DatabaseHelper.SQLHandler.ReadOutputParameters(System.Data.SqlClient.SqlCommand,System.Collections.Generic.List{DatabaseHelper.ParameterSQL})">
+            <summary>
+            Reads the output and return values of the stored procedure that was executed
+            </summary>
+            <param name="command">The SqlCommand object used for the database operation</param>
+            <param name="parameters">The list of parameter names and values receibved from the caller</param>
+            <returns>(List of ParameterSQL)</returns>
+        </member>
+        <member name="T:TypeConvertor">
+            <summary>
+            Convert a base data type to another base data type
+            </summary>
+        </member>
+        <member name="M:TypeConvertor.ToNetType(System.Data.DbType)">
+            <summary>
+            Convert db type to .Net data type
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TypeConvertor.ToNetType(System.Data.SqlDbType)">
+            <summary>
+            Convert TSQL type to .Net data type
+            </summary>
+            <param name="sqlDbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TypeConvertor.ToDbType(System.Type)">
+            <summary>
+            Convert .Net type to Db type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TypeConvertor.ToDbType(System.Data.SqlDbType)">
+            <summary>
+            Convert TSQL data type to DbType
+            </summary>
+            <param name="sqlDbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TypeConvertor.ToSqlDbType(System.Type)">
+            <summary>
+            Convert .Net type to TSQL data type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TypeConvertor.ToSqlDbType(System.Data.DbType)">
+            <summary>
+            Convert DbType type to TSQL data type
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

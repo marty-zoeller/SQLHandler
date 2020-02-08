@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZoellerSecurity</name>
+    </assembly>
+    <members>
+        <member name="T:Zoeller.Encryptor">
+            <summary>
+            Does string encryption and decryption
+            </summary>
+        </member>
+        <member name="M:Zoeller.Encryptor.Encrypt(System.String)">
+            <summary>
+            Encrypt a string
+            </summary>
+            <param name="data">the string to encrypt</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:Zoeller.Encryptor.Decrypt(System.String)">
+            <summary>
+            Decrypts an encrypted string.  Must have been encrypted using this library
+            </summary>
+            <param name="data">The string to decrypt</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

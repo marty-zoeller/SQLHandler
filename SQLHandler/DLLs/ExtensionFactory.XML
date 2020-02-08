@@ -1,0 +1,1290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExtensionFactory</name>
+    </assembly>
+    <members>
+        <member name="T:Extensions">
+            <summary>
+            These are array serach and manipulation methods that are designed
+                to make your programming life a little easier
+            </summary>
+        </member>
+        <member name="M:Extensions.Total(System.Decimal[])">
+            <summary>
+            Returns the total of all elements in the array
+            </summary>
+            <param name="source">A decimal array</param>
+            <returns>*decimal)</returns>
+        </member>
+        <member name="M:Extensions.Average(System.Decimal[])">
+            <summary>
+            Returns the average of all elements in the array
+            </summary>
+            <param name="source">A decimal array</param>
+            <returns>*decimal)</returns>
+        </member>
+        <member name="M:Extensions.Total(System.Double[])">
+            <summary>
+            Returns the total of all elements in the array
+            </summary>
+            <param name="source">A decimal array</param>
+            <returns>*decimal)</returns>
+        </member>
+        <member name="M:Extensions.Average(System.Double[])">
+            <summary>
+            Returns the average of all elements in the array
+            </summary>
+            <param name="source">A decimal array</param>
+            <returns>*decimal)</returns>
+        </member>
+        <member name="M:Extensions.RemoveAt``1(``0[],System.Int32)">
+            <summary>
+            Removes an array element at a specific index
+            </summary>
+            <typeparam name="T">The array to remove the item from</typeparam>
+            <param name="source">The array to remove the item from</param>
+            <param name="index">The item index number to remove</param>
+            <returns>(T[]) the new array</returns>
+        </member>
+        <member name="M:Extensions.Add``1(``0[],``0)">
+            <summary>
+            Adds an element to the end of an array.  You will need to set your target array equal to the return from this method.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to add the element to</param>
+            <param name="item">The new element value</param>
+            <returns>(T[]) Array with the new element added to the end</returns>
+        </member>
+        <member name="M:Extensions.AddIfNotExist``1(``0[],``0,System.StringComparison)">
+            <summary>
+            Adds an element to the end of an array, if it does not already exist in the array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to add the element to</param>
+            <param name="value">The new element value</param>
+            <param name="comparison">
+               One of the enumeration values that specify the rules for the search
+            </param>
+            <returns>(T[]) Array with the new element added to the end</returns>
+        </member>
+        <member name="M:Extensions.Insert``1(``0[],System.Int32,``0)">
+            <summary>
+            Inserts an element into an array at a specified index and returns the new array
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to insert into</param>
+            <param name="index">The zero-based index at which the item should be inserted</param>
+            <param name="item">The object to insert.  The value can be null for reference types</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.RemoveDuplicates``1(``0[])">
+            <summary>
+            Removes any duplicate values from an array. Returns an array with only distinct values.
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to operate on</param>
+            <returns>(T[]) An array with only distinct values</returns>
+        </member>
+        <member name="M:Extensions.IndexOf(System.String[],System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Returns the 0 based index number of the first occurance of the value parameter received.
+            </summary>
+            <param name="source">The array being seached</param>
+            <param name="value">The string to search for</param>
+            <param name="startIndex">
+                The array element index number to start at (Default = 0)
+            </param>
+            <param name="comparison">
+                One of the enumeration values that specify the rules for the search
+            </param>
+            <returns>(int) the index of thye element</returns>
+        </member>
+        <member name="M:Extensions.IndexOfAll(System.String[],System.String,System.Int32,System.StringComparison)">
+            <summary>
+            Returns the 0 based index number of the first occurance of the value parameter received.
+            Case is ignored so "AAAAA" will match "aaaaa"
+            </summary>
+            <param name="source">The array being seached</param>
+            <param name="value">The string to search for</param>
+            <param name="startIndex">
+                The array element index number to start at (Default = 0)
+            </param>
+            <param name="comparison">
+                One of the enumeration values that specify the rules for the search
+            </param>
+            <returns>(int) the index of thye element</returns>
+        </member>
+        <member name="M:Extensions.IndexOfAll(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            Returns the 0 based index number of the first occurance of the value parameter received.
+            Case is ignored so "AAAAA" will match "aaaaa"
+            </summary>
+            <param name="source">The array being seached</param>
+            <param name="value">The string to search for</param>
+            <param name="startIndex">
+                The array element index number to start at (Default = 0)
+            </param>
+            <returns>(int) the index of thye element</returns>
+        </member>
+        <member name="M:Extensions.CopyTo``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Copies selected index range from an array to a new array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to copy</param>
+            <param name="startIndex">The index to start copying at</param>
+            <param name="length">(Optional default = 0, from startIndex to end) The number of elements to copy</param>
+            <returns>The new array containg only the desired elelments</returns>
+        </member>
+        <member name="M:Extensions.ToStringArray``1(``0[])">
+            <summary>
+            Converts an array to a string array (string[])
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns>New string array (string[])</returns>
+        </member>
+        <member name="M:Extensions.ToIntArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to integers (Int32) and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New integer (Int32) array</returns>
+        </member>
+        <member name="M:Extensions.ToLongArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to longs (Int64) and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New long (Int64) array</returns>
+        </member>
+        <member name="M:Extensions.ToShortArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to shorts (Int16) and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New short (Int16) array</returns>
+        </member>
+        <member name="M:Extensions.ToDecimalArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to decimals and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New decimal array</returns>
+        </member>
+        <member name="M:Extensions.ToDoubleArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to doubles and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New double array</returns>
+        </member>
+        <member name="M:Extensions.ToSingleArray``1(``0[],System.Boolean)">
+            <summary>
+            Converts all elements of an array to Singles and returns them in a new array.
+            If onErrorZero == true then Null or empty values convert to 0 otherwise an error is thrown.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <param name="onErrorZero">
+                Optional (default = false) - If true and it can not convert to number
+                    then it will set the value to 0.
+                Otherwise an error will be thrown
+            </param>
+            <returns>New Single array</returns>
+        </member>
+        <member name="M:Extensions.ToDateTimeArray``1(``0[])">
+            <summary>
+            Converts all elements of an array to DateTimes and returns them in a new array.
+            Null or empty values convert to 1/1/1900 00:00:00
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <returns>New DateTime array</returns>
+        </member>
+        <member name="M:Extensions.ToDateTimeOffsetArray``1(``0[])">
+            <summary>
+            Converts all elements of an array to DateTimeOffset and returns them in a new array.
+            Null or empty values convert to 1/1/1900 00:00:00
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be converted</param>
+            <returns>New DateTime array</returns>
+        </member>
+        <member name="M:Extensions.ToString``1(``0[],System.String)">
+            <summary>
+            Concatenates all array elements to a single string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="delimiter">(Optional default = "") Value to seperate each element with</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:Extensions.Sort``1(``0[],System.Boolean)">
+            <summary>
+            Sorts an array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The array to be sorted</param>
+            <param name="descending">
+                (Optional default = false - Ascending) false for Ascending or true for Descending.
+                If not sent then Ascending is assumed
+            </param>
+            <returns>(T[]) The sorted array</returns>
+        </member>
+        <member name="M:Extensions.DoAllEqual``1(``0[],``0)">
+            <summary>
+            Determines if all elements in an array are equal to value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array of items to compare to value</param>
+            <param name="value">The value to compare the array items to</param>
+            <returns>(bool) true if all item == value otherwise false</returns>
+        </member>
+        <member name="M:Extensions.ToList``1(``0[])">
+            <summary>
+            Converts an array to a List
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to convert</param>
+            <returns>List object of the array values</returns>
+        </member>
+        <member name="M:Extensions.FindIn(System.Collections.Generic.List{System.Int64},System.Int64)">
+            <summary>
+            Locates a value in a list
+            </summary>
+            <param name="source"></param>
+            <param name="value">The value to search for</param>
+            <returns>(int)</returns>
+        </member>
+        <member name="M:Extensions.FindIn(System.Int64[],System.Int64)">
+            <summary>
+            Locates a value in an array
+            </summary>
+            <param name="source"></param>
+            <param name="value">The value to search for</param>
+            <returns>(int)</returns>
+        </member>
+        <member name="M:Extensions.SwapValues``1(``0[],System.Int64,System.Int64)">
+            <summary>
+            Swaps two value of an array
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to perform the swap on</param>
+            <param name="index1">The first index number to be swapped</param>
+            <param name="index2">The second index number to be swapped</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.RemoveEqualTo``1(``0[],``0)">
+            <summary>
+            Removes all items from a list where the item == value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The list to remove the items from</param>
+            <param name="value">The value to remove</param>
+        </member>
+        <member name="M:Extensions.Fill``1(``0[],``0)">
+            <summary>
+            Set all items in an array equal to the same value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to set the items for</param>
+            <param name="value">The value to set all of the array items equal to</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.Fill``1(``0[],``0,System.Int64)">
+            <summary>
+            Set all items in an array equal to the same value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to set the items for</param>
+            <param name="value">The value to set all of the array items equal to</param>
+            <param name="length">The number of elements you wasnt in the new array</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.ForEach``1(``0[],System.Action{``0[]},System.Boolean)">
+            <summary>
+            Performs a specified action on each element in the array.
+            Example: int[] array = new int[] { 1, 2, 3, 4 };
+                     Action(List parameter goes here) s = Program.PerformMe;
+                     array = array.ForEach(s, true);
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to execute against</param>
+            <param name="code">
+                A public static method the receives a single List element as an argument
+                and optionally returns a single List item.
+            </param>
+            <param name="listAltersValue">true or false should code alter the array values</param>
+        </member>
+        <member name="M:Extensions.ForEach``1(``0[],System.Action{``0})">
+            <summary>
+            Performs a specified action on each element in the array.
+            Example: int[] array = new int[] { 1, 2, 3, 4 };
+                     Action(T) s = Program.PerformMe;
+                     array = array.ForEach(s);
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to execute against</param>
+            <param name="code">
+                A public static method the receives a single List element as an argument
+                and optionally returns a single List item.
+            </param>
+            <returns>(T[]) The array</returns>
+        </member>
+        <member name="M:Extensions.ToLower(System.String[])">
+            <summary>
+            Converts all array values to lower case
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Extensions.ToUpper(System.String[])">
+            <summary>
+            Converts all array values to upper case
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Extensions.SwapValues``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Swaps two value of an array
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to perform the swap on</param>
+            <param name="index1">The first index number to be swapped</param>
+            <param name="index2">The second index number to be swapped</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.AddIfNotExist``1(System.Collections.Generic.List{``0},``0,System.StringComparison)">
+            <summary>
+            Adds a value to a List object if it does not already exist in the list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The list to add the value to</param>
+            <param name="value">The value to add</param>
+            <param name="comparison">
+                One of the enumeration values that specify the rules for the search
+            </param>
+        </member>
+        <member name="M:Extensions.DoAllEqual``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Determines if all elements in a list are equal to value
+            </summary>
+            <typeparam name="T">Any data typee</typeparam>
+            <param name="source">The List of items to compare to value</param>
+            <param name="value">The value to compare the list items to</param>
+            <returns>(bool) true if all item == value otherwise false</returns>
+        </member>
+        <member name="M:Extensions.RemoveEqualTo``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Removes all items from a list where the item == value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The list to remove the items from</param>
+            <param name="value">The value to remove</param>
+        </member>
+        <member name="M:Extensions.Fill``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Set all items in a list equal to the same value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The list to set the items for</param>
+            <param name="value">The value to set all of the array items equal to</param>
+            <returns>(List<T></T>) The new list</returns>
+        </member>
+        <member name="M:Extensions.Fill``1(System.Collections.Generic.List{``0},``0,System.Int32)">
+            <summary>
+            Set all items in a list equal to the same value
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The list to set the items for</param>
+            <param name="value">The value to set all of the array items equal to</param>
+            <param name="length">The number of elements you want added to the list</param>
+            <returns>(List<T></T>) The new list</returns>
+        </member>
+        <member name="M:Extensions.RemoveAll``1(``0[],System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Removes all the elements that match the conditions defined by specified predicate
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The array to remove the items from</param>
+            <param name="match">The Predicate&lt;in T&gt; delegate that defines the conditions of the elements to remove</param>
+            <returns>(T[]) The new array</returns>
+        </member>
+        <member name="M:Extensions.RemoveDuplicates``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Removes any duplicate values from a list. Returns a list with only distinct values.
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The list to operate on</param>
+            <returns>(List&lt;T&lt;) An array with only distinct values</returns>
+        </member>
+        <member name="M:Extensions.ToLower(System.Collections.Generic.List{System.String})">
+            <summary>
+            Converts all list values to lower case
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Extensions.ToUpper(System.Collections.Generic.List{System.String})">
+            <summary>
+            Converts all list values to upper case
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="T:DateTimeExtensions">
+            <summary>
+            DateTime and DateTimeOffset extension methods
+            </summary>
+        </member>
+        <member name="M:DateTimeExtensions.MonthName(System.DateTime,System.Boolean,System.String)">
+            <summary>
+            Return the name of month
+            </summary>
+            <param name="source">The date to evaluate</param>
+            <param name="abbreviate">(Optional default = false) - True or False send the abbreviation of the month name.</param>
+            <param name="puncutation">(Optional default = ".") - Character or string to append to end of the abbreviated month name</param>
+            <returns></returns>
+        </member>
+        <member name="M:DateTimeExtensions.MonthName(System.DateTimeOffset,System.Boolean,System.String)">
+            <summary>
+            Returns the name of month
+            </summary>
+            <param name="source">The date to evaluate</param>
+            <param name="abbreviate">(Optional default = false) - True or False send the abbreviation of the month name.</param>
+            <param name="puncutation">(Optional default = ".") - Character or string to append to end of the abbreviated month name</param>
+            <returns>(string) The name of month</returns>
+        </member>
+        <member name="M:DateTimeExtensions.DayOfWeekNumber(System.DateTime)">
+            <summary>
+            Returns the number value of the Day of the Week 1 = Sunday, 7 = Saturday
+            </summary>
+            <param name="source">The date to evaluate</param>
+            <returns>(int) The day of week number</returns>
+        </member>
+        <member name="M:DateTimeExtensions.DayOfWeekNumber(System.DateTimeOffset)">
+            <summary>
+            Returns the number value of the Day of the Week 1 = Sunday, 7 = Saturday
+            </summary>
+            <param name="source">The date to evaluate</param>
+            <returns>(int) The day of week number</returns>
+        </member>
+        <member name="M:DateTimeExtensions.ToJulian(System.DateTime)">
+            <summary>
+            Converts a DateTime to a Julian date
+            </summary>
+            <param name="source">The DateTime object to convert</param>
+            <returns>(double)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.JulianDateToDateTime(System.Double)">
+            <summary>
+            Convert a Julian date to a DateTime
+            </summary>
+            <param name="source"></param>
+            <returns>(DateTime)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.SecondeCountSince(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            Returns the number of seconds since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of seconds since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.SecondCountSince(System.DateTimeOffset,System.DateTimeOffset,System.Boolean)">
+            <summary>
+            Returns the number of seconds since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of seconds since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.MinuteCountSince(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            Returns the number of minutes since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of minutes since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.MinuteCountSince(System.DateTimeOffset,System.DateTimeOffset,System.Boolean)">
+            <summary>
+            Returns the number of minutes since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of minutes since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.HourCountSince(System.DateTime,System.DateTime,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the number of hours since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <param name="fractionToMinutes">
+                If fractional is true do want the fraction converted to minutes and seconds.
+                The return would look like 4.3415 where 34 = 34 minutes and 15 = 15 seconds.
+            </param>
+            <returns>(double) the number of hours since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.HourCountSince(System.DateTimeOffset,System.DateTimeOffset,System.Boolean,System.Boolean)">
+            <summary>
+            Returns the number of hours since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <param name="fractionToMinutes">
+                If fractional is true do want the fraction converted to minutes and seconds.
+                The return would look like 4.3415 where 34 = 34 minutes and 15 = 15 seconds.
+            </param>
+            <returns>(double) the number of hours since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.DayCountSince(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            Returns the number of days since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of days since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.DayCountSince(System.DateTimeOffset,System.DateTimeOffset,System.Boolean)">
+            <summary>
+            Returns the number of days since "baseDate"
+            </summary>
+            <param name="source">The DateTime object</param>
+            <param name="baseDate">The date to calculate the number of days since</param>
+            <param name="fractional">If true the result may contain digits after the decimal</param>
+            <returns>(double) the number of days since baseDate</returns>
+        </member>
+        <member name="M:DateTimeExtensions.ToDateTime(System.String,System.DateTime@)">
+            <summary>
+            Tries to convert a value to an DateTime object.  If successful returns true otherwise false
+            </summary>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.ToDateTime(System.String,System.DateTimeOffset@)">
+            <summary>
+            Tries to convert a value to an DateTimeOffset object.  If successful returns true otherwise false
+            </summary>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.DayOfWeekAbbreviated(System.DateTime,System.String)">
+            <summary>
+            Returns the abbreviated day of the week i.e "Monday" = "Mon"
+            </summary>
+            <param name="source"></param>
+            <param name="puncuate">Optional (default = ".") punctuation mark to add after the return value</param>
+            <returns>(string) The abbreviated day of week</returns>
+        </member>
+        <member name="M:DateTimeExtensions.Convert_OffsetMinutesToDateTimeOffset(System.DateTime,System.Int32)">
+            <summary>
+            Returns a DateTimeOffset for the current DateTime using the offset setting received
+            </summary>
+            <param name="source">(DateTimeOffset) Any DateTimeOffset value</param>
+            <param name="offsetMinutes">(int) The number of minutes to set the Time offset to</param>
+            <returns>(DateTimeOffset)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.Convert_OffsetMinutesToDateTimeOffset(System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            Returns a DateTimeOffset for the current DateTime using the offset setting received
+            </summary>
+            <param name="source">(DateTimeOffset) Any DateTimeOffset value</param>
+            <param name="offsetMinutes">(int) The number of minutes to set the Time offset to</param>
+            <returns>(DateTimeOffset)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.Convert_OffsetMinutesToDateTimeOffset(System.DateTimeOffset,System.Int32)">
+            <summary>
+            Returns a DateTimeOffset for the current DateTime using the offset setting received
+            </summary>
+            <param name="source">(DateTimeOffset) Any DateTimeOffset value</param>
+            <param name="offsetMinutes">(int) The number of minutes to set the Time offset to</param>
+            <returns>(DateTimeOffset)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.Convert_OffsetMinutesToDateTimeOffset(System.Nullable{System.DateTimeOffset},System.Int32)">
+            <summary>
+            Returns a DateTimeOffset for the current DateTime using the offset setting received
+            </summary>
+            <param name="source">(DateTimeOffset) Any DateTimeOffset value</param>
+            <param name="offsetMinutes">(int) The number of minutes to set the Time offset to</param>
+            <returns>(DateTimeOffset)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.CompareTo(System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+            Compares the current DateTimeOffset? object to a specified DateTimeOffset? object and indicates whether the current DateTimeOffset? object is earlier than (-1), the same as (0),
+            or later than the (1) the second DateTimeOffset? object.
+            Note: A null value is considered to be less than an actual value.  Two nulls are considered to be equal.
+            </summary>
+            <param name="source">The base DateTime object to compare</param>
+            <param name="other">The DateTimeOffset? object to compare the source object to</param>
+            <returns>(int)</returns>
+        </member>
+        <member name="M:DateTimeExtensions.ParseNullableDateTimeOffset(System.Object)">
+            <summary>
+            Converts an object to a DateTimeOffset?.  If conversion fails then null is returned.
+            </summary>
+            <param name="source">Any object</param>
+            <returns>(DateTimeOffset?)</returns>
+        </member>
+        <member name="T:ExtensionFactory.DictionaryExtensions">
+            <summary>
+            Extends the .Net Dictionary class
+            </summary>
+        </member>
+        <member name="M:ExtensionFactory.DictionaryExtensions.GetValue``2(System.Collections.Generic.Dictionary{``0,``1},``0)">
+            <summary>
+            Get the value for a Key setting in a Dictionary object.  Returns an object type.  Returns null if the key is not found
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <param name="dictionary"></param>
+            <param name="key">The Key to find and return the Value of</param>
+            <returns>(object)</returns>
+        </member>
+        <member name="M:ExtensionFactory.DictionaryExtensions.Replace``2(System.Collections.Generic.Dictionary{``0,``1},``0,``0,``1)">
+            <summary>
+            Replace an item, by Key, in a Dictionary with a new Key and or Value and returns the new Dictionary object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <param name="dictionary"></param>
+            <param name="key">The Key setting to find and replace</param>
+            <param name="newKey">The new Key value setting</param>
+            <param name="newValue">The new Value</param>
+            <returns>New Dictionary object</returns>
+        </member>
+        <member name="T:ExtensionFactory.ENums">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ExtensionFactory.ENums.CreateENums">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ExtensionFactory.SqlDataExtensions">
+            <summary>
+            Extension to the System.Data.SqlClient library
+            </summary>
+        </member>
+        <member name="M:ExtensionFactory.SqlDataExtensions.GetString(System.Data.SqlClient.SqlDataReader,System.String)">
+            <summary>
+            Get the value of a string type field (varchar, nvarchar, char, etc.), by field name, from a SqlDataReader object
+            </summary>
+            <param name="source">The SqlDataReader</param>
+            <param name="fieldName">The name of the field to retrieve</param>
+            <returns>(strintg)</returns>
+        </member>
+        <member name="T:EnumCreator">
+            <summary>
+            This class is used to dynamically create enums
+            </summary>
+        </member>
+        <member name="M:EnumCreator.CreateEnums(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Creates an enum assembly from a List&lt;string&gt;.  The assembly must
+                be loaded by using System.Reflection.Assembly.LoadFrom(The Assembly Name returned by this method);
+            </summary>
+            <param name="enumName">The name you want to use to access the enums</param>
+            <param name="path">Library directory</param>
+            <param name="values">The enum values</param>
+            <returns>(string)The assembly name</returns>
+        </member>
+        <member name="T:Files">
+            <summary>
+            System.IO.File alternate methods
+            </summary>
+        </member>
+        <member name="M:Files.MoveWithReplace(System.String,System.String,System.Boolean)">
+            <summary>
+            Moves a file from sourceFileName to destFileName with the option to replace
+                the file if destFileName already exists
+            </summary>
+            <param name="sourceFileName">The path and name of the source file</param>
+            <param name="destFileName">The path and name of the desitnation file</param>
+            <param name="replace">true to replace an existing file (Default = true).</param>
+        </member>
+        <member name="M:Files.FileInsertAtTop(System.String,System.String[])">
+            <summary>
+            Inserts lines at the top of of a text file and returns the number of lines inserted.
+            Caller must be able to read, write and delete files in the file path.
+            </summary>
+            <param name="filePathName">The path and name of the file to innsert the lines into</param>
+            <param name="lines">
+                The Array or comma seperated items of lines to insert.
+                Nulls are converted to empty strings.
+            </param>
+            <returns>(int) Number of lines inserted</returns>
+        </member>
+        <member name="M:Files.FileInsertAtTop(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Inserts lines at the top of of a text file and returns the number of lines inserted.
+            Caller must be able to read, write and delete files in the file path.
+            </summary>
+            <param name="filePathName">The path and name of the file to innsert the lines into</param>
+            <param name="lines">
+                The List of lines to insert.  Nulls are converted to empty strings.
+            </param>
+            <returns>(int) Number of lines inserted</returns>
+        </member>
+        <member name="T:GeneralExtensions">
+            <summary>
+            Extensions for general usage
+            </summary>
+        </member>
+        <member name="M:GeneralExtensions.DeepCopy``1(``0)">
+            <summary>
+            Does a deep copy.  Creates a new instance of the object
+            </summary>
+            <typeparam name="T">Any object</typeparam>
+            <param name="source">Any reference type object, usually a class or List of classes</param>
+            <returns>New instance of the object</returns>
+        </member>
+        <member name="M:GeneralExtensions.In``1(``0,``0[])">
+            <summary>
+            Determines if an item is equal to any of the received values.
+            Compares any data type but is case sensitive for strings.
+            For case insensitive string comparisons use "InStringCompare".
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The item to search for</param>
+            <param name="args">The comma seperated list of items to check</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:GeneralExtensions.InStringCompare(System.String,System.StringComparison,System.String[])">
+            <summary>
+            Determines if a string is equal to any of the received string values using a String Comparison method
+            </summary>
+            <param name="source">The item to search for</param>
+            <param name="comparison">One of the enumeration values that specify the rules for the search</param>
+            <param name="args">The comma seperated list of items to check</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:GeneralExtensions.SetDropDownWidth(System.Windows.Forms.ComboBox)">
+            <summary>
+            Sets the DropDownWidth to ensure that no item's text is cut off.
+            </summary>
+        </member>
+        <member name="M:GeneralExtensions.IsBetween``1(``0,``0,``0,GeneralExtensions.BetweenCompare)">
+            <summary>
+            Is a value between the lower value and the upper value.
+            Example: "aaaaa".IsBetween("aaaaa", "ccccc"),
+                     "aaaaa".IsBetween("aaaaa", "ccccc", GeneralExtensions.BetweenCompare.InclusiveLower)
+            </summary>
+            <typeparam name="T">Any IComparable type</typeparam>
+            <param name="source">The object to compare</param>
+            <param name="lower">The lowest value</param>
+            <param name="upper">The highest value</param>
+            <param name="compareType">
+                Optional (default = BetweenType.Inclusive)) - The BetweenType comparison method
+            </param>
+            <returns>(bool) true if the value is between lower and upper otherwise false</returns>
+        </member>
+        <member name="M:GeneralExtensions.With(System.Text.StringBuilder,System.String,System.String[])">
+            <summary>
+            Appends multiple strings to a StringBuilder object with the 
+                option to add a seperator string between each item, except the last one.
+            </summary>
+            <param name="source">The StringBuilder object to append to</param>
+            <param name="seperator">
+               This will be appended after each item, except the last one, as a sepertator.
+               This argument can be null or empty
+            </param>
+            <param name="args">The comma seperated list or an array of strings to append</param>
+            <returns>(StringBuilder) With all of the strings appended</returns>
+        </member>
+        <member name="M:GeneralExtensions.With(System.Text.StringBuilder,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Appends multiple strings to a StringBuilder object with the 
+                option to add a seperator string between each item, except the last one.
+            </summary>
+            <param name="source">The StringBuilder object to append to</param>
+            <param name="seperator">
+               This will be appended after each item, except the last one, as a sepertator.
+               This argument can be null or empty
+            </param>
+            <param name="args">A List of strings to add</param>
+        </member>
+        <member name="M:GeneralExtensions.AddRange``2(System.Collections.Generic.ICollection{``0},``1[])">
+            <summary>
+            Adds elements to a List
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="S"></typeparam>
+            <param name="list"></param>
+            <param name="values">A comma seperated list or an array of items to add to the List</param>
+        </member>
+        <member name="M:GeneralExtensions.XmlSerialize``1(``0)">
+            <summary>Serializes an object of type T in to an xml string</summary>
+            <typeparam name="T">Any class type</typeparam>
+            <param name="source">Object to serialize</param>
+            <returns>A string that represents Xml, empty otherwise</returns>
+        </member>
+        <member name="M:GeneralExtensions.XmlDeserialize``1(System.String)">
+            <summary>Deserializes an xml string in to an object of Type T</summary>
+            <typeparam name="T">Any class type</typeparam>
+            <param name="source">Xml as string to deserialize from</param>
+            <returns>A new object of type T is successful, null if failed</returns>
+        </member>
+        <member name="M:GeneralExtensions.ThrowExceptionIfNull``1(``0,System.String,System.Boolean)">
+            <summary>
+            Throws an ArgumentNullException if the value of the object is null
+            </summary>
+            <typeparam name="T">Any data type</typeparam>
+            <param name="source">The value to be evaluated</param>
+            <param name="parameterName">
+                The name of the parameter being evaluated, not the value.
+                Used for the exception message.
+            </param>
+            <param name="emptyFails">
+               Optional (default = false) - If true, after null check, value is converted to a 
+               string and an exception is thrown if the value is Empty or just whitespace
+            </param>
+        </member>
+        <member name="T:GeneralExtensions.BetweenCompare">
+            <summary>
+            Between method comparison limitation types
+            </summary>
+        </member>
+        <member name="F:GeneralExtensions.BetweenCompare.NotInclusive">
+            <summary>
+            False if equal to lower or equal to upper value
+            </summary>
+        </member>
+        <member name="F:GeneralExtensions.BetweenCompare.InclusiveLower">
+            <summary>
+            True if equal to lower value but not if equal to upper value
+            </summary>
+        </member>
+        <member name="F:GeneralExtensions.BetweenCompare.InclusiveUpper">
+            <summary>
+            True if equal to upper value but not if equal to lower value
+            </summary>
+        </member>
+        <member name="F:GeneralExtensions.BetweenCompare.Inclusive">
+            <summary>
+            True if equal to lower or equal to upper value
+            </summary>
+        </member>
+        <member name="T:NumericExtensions">
+            <summary>
+            Numeric type extension methods
+            </summary>
+        </member>
+        <member name="M:NumericExtensions.ToAsciiString(System.Int32)">
+            <summary>
+            Converts an integer value to an Ascii string value
+            </summary>
+            <param name="source">The n</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToAsciiString(System.Int16)">
+            <summary>
+            Converts a short value to an Ascii string value
+            </summary>
+            <param name="source">The n</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToAsciiCharacter(System.Int32)">
+            <summary>
+            Converts an integer value to an Ascii string value
+            </summary>
+            <param name="source">The n</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToAsciiCharacter(System.Int16)">
+            <summary>
+            Converts a short value to an Ascii string value
+            </summary>
+            <param name="source">The n</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToInt``1(``0,System.Int32@)">
+            <summary>
+            Tries to convert a value to an int (Int32).  If successful returns true otherwise false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToLong``1(``0,System.Int64@)">
+            <summary>
+            Tries to convert a value to a long (Int64).  If successful returns true otherwise false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToShort``1(``0,System.Int16@)">
+            <summary>
+            Tries to convert a value to a short (Int16).  If successful returns true otherwise false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToDouble``1(``0,System.Double@)">
+            <summary>
+            Tries to convert a value to a double.  If successful returns true otherwise false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:NumericExtensions.ToDecimal``1(``0,System.Decimal@)">
+            <summary>
+            Tries to convert a value to a decimal.  If successful returns true otherwise false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The value to be converted</param>
+            <param name="output">The reference parameter to be set to the new int</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:NumericExtensions.MilesToKilometers``1(``0)">
+            <summary>
+            Convert miles to kilometers
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns>(decimal)</returns>
+        </member>
+        <member name="M:NumericExtensions.KilometersToMiles``1(``0)">
+            <summary>
+            Convert kilometers to miles
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns>(decimal)</returns>
+        </member>
+        <member name="M:NumericExtensions.RoundMe(System.Decimal,System.Int16)">
+            <summary>
+            Rounds a decimal to a specific number of decimal places
+            </summary>
+            <param name="source">Any decimal</param>
+            <param name="count">Number of characters right of the decimal</param>
+            <returns>(decimal)</returns>
+        </member>
+        <member name="M:NumericExtensions.RoundMe(System.Double,System.Int16)">
+            <summary>
+            Rounds a double to a specific number of decimal places
+            </summary>
+            <param name="source">Any decimal</param>
+            <param name="count">Number of characters right of the decimal</param>
+            <returns>(decimal)</returns>
+        </member>
+        <member name="M:NumericExtensions.IsNumeric(System.Object)">
+            <summary>
+            Determines if an object can be converted to a nuber
+            </summary>
+            <param name="source">The value to be evaluated</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="T:StringBuilderExtensions">
+            <summary>
+            StringBuilder object extensions
+            </summary>
+        </member>
+        <member name="M:StringBuilderExtensions.ToArray(System.Text.StringBuilder)">
+            <summary>
+            Returns an array containing the lines of a StringBuilder object.
+            The StringBuilder object should have been built using the .AppendLine method
+            though "\n" is recognized
+            </summary>
+            <param name="source">The StringBuilder object</param>
+            <returns>(string[]) Containing the StringBuilder lines</returns>
+        </member>
+        <member name="M:StringBuilderExtensions.ToList(System.Text.StringBuilder)">
+            <summary>
+            Returns a List of strings containing the lines of a StringBuilder object.
+            The StringBuilder object should have been built using the .AppendLine method
+            though "\n" is recognized.
+            </summary>
+            <param name="source">The StringBuilder object</param>
+            <returns>(List of strings) Containing the StringBuilder lines</returns>
+        </member>
+        <member name="T:StringExtensions">
+            <summary>
+            These are string serach and manipulation methods that are designed
+                to make your programming life a little easier
+            </summary>
+        </member>
+        <member name="M:StringExtensions.SplitAtString(System.String,System.String,System.Boolean,System.StringSplitOptions,System.StringComparison)">
+            <summary>
+            Splits a string at each occurance of another string
+            </summary>
+            <param name="source"></param>
+            <param name="seperator">The string to split at</param>
+            <param name="options">
+                The StringSplitOptions to use
+                    (Default = StringSplitOptions.None)
+            </param>
+            <param name="comparison">
+                One of the enumeration values that specify the rules for the search
+            </param>
+            <returns>(string[]) An array containing the results</returns>
+            <param name="trimResults">
+                If true all of the results will have the leading and
+                    trailing spaces removed (Default = false)
+            </param>
+        </member>
+        <member name="M:StringExtensions.Reverse(System.String)">
+            <summary>
+            Returns the string in reverse order
+            </summary>
+            <param name="source">The string to reverse</param>
+            <returns>(string) The string in reverse order</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveText(System.String,System.String)">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">String containing the character string to remove</param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveText(System.String,System.String[])">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">
+                String array containing the list character strings to remove
+            </param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveText(System.String,System.Char)">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">The character to remove</param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveText(System.String,System.Char[])">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">
+                Character array containing the list character to remove
+            </param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.CountOccurances(System.String,System.Char)">
+            <summary>
+            Returns the number time a character appears in a string.
+            </summary>
+            <param name="source">The string to search</param>
+            <param name="character">The character to count the occurances of</param>
+            <returns>(int) The number of occurances</returns>
+        </member>
+        <member name="M:StringExtensions.CountOccurances(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns the number time a string appears in another string.
+            </summary>
+            <param name="source">The string to search</param>
+            <param name="value">The string to count the occurances of</param>
+            <param name="comparison">One of the enumeration values that specify the rules for the search</param>
+            <returns>(int) The number of occurances</returns>
+        </member>
+        <member name="M:StringExtensions.WordCount(System.String,System.Int16)">
+            <summary>
+            Returns the number of words in the source string
+            </summary>
+            <param name="source">Any string</param>
+            <param name="minWordLength">The minimum length that a word must be to count as a word (Default = 0)</param>
+            <returns>(long)</returns>
+        </member>
+        <member name="M:StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a new string in which all occurances of a specified string have been replaced
+                with another specified string with the option sending a string comparison method
+            </summary>
+            <param name="source">The string being searched</param>
+            <param name="oldValue">The string to be replaced</param>
+            <param name="newValue">The string to replace all occurances oldValue with</param>
+            <param name="comparison">One of the enumeration values that specify the rules for the search</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:StringExtensions.Replace(System.String,System.Int32,System.String)">
+            <summary>
+            Replaces a specified character position in a string with a specified string
+            </summary>
+            <param name="source">The source string</param>
+            <param name="position">The character position to replace</param>
+            <param name="replacement">The replacement string</param>
+            <returns>(string) The newly formatted string</returns>
+        </member>
+        <member name="M:StringExtensions.UppercaseFirstLetter(System.String)">
+            <summary>
+            Converts the first character of string to upper case
+            </summary>
+            <param name="source">The string to convert</param>
+            <returns>(string) with the first character converted to upper case</returns>
+        </member>
+        <member name="M:StringExtensions.WordCount(System.String)">
+            <summary>
+            Return the number of words in a string
+            </summary>
+            <param name="source">The string to count the words for</param>
+            <returns>(int) The number of words in the string</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveCharacters(System.String,System.String)">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">String containing the character string to remove</param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveCharacters(System.String,System.String[])">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">
+                String array containing the list character strings to remove
+            </param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveCharacters(System.String,System.Char)">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">The character to remove</param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.RemoveCharacters(System.String,System.Char[])">
+            <summary>
+            Remove characters from a string and returns the new string
+            </summary>
+            <param name="source">The string to remove the characters from</param>
+            <param name="remove">
+                Character array containing the list character to remove
+            </param>
+            <returns>(string) The new string with the desired characters removed</returns>
+        </member>
+        <member name="M:StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Determines if a string is equal to null or is empty or just contains white space
+            </summary>
+            <param name="source"></param>
+            <returns>(bool) false if string contains any characters other than spaces otherwise true</returns>
+        </member>
+        <member name="M:StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Determines if a string is equal to null or is empty
+            </summary>
+            <param name="source"></param>
+            <returns>(bool) false if string contains any characters otherwise true</returns>
+        </member>
+        <member name="M:StringExtensions.FormatString(System.String,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with a string representation
+                of a corresponding object in a specified array.
+            </summary>
+            <param name="source">The string to format</param>
+            <param name="replacements">The object[] array or comma seperated list of replacement items</param>
+            <returns>(string) The newly formatted string</returns>
+        </member>
+        <member name="M:StringExtensions.FormatString(System.String@,System.Object[])">
+            <summary>
+            Replaces the format item in a specified string with a string representation
+                of a corresponding object in a specified array.
+            </summary>
+            <param name="source">The string to format</param>
+            <param name="replacements">The object[] array or comma seperated list of replacement items</param>
+        </member>
+        <member name="M:StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Returns a value indicating whether a specified substring appears within this string
+            </summary>
+            <param name="source">The string to search (this string)</param>
+            <param name="value">The string to seek</param>
+            <param name="comparison">One of the enumeration values that specify the rules for the search</param>
+            <returns>(bool) true if the substring appears in this string otherwise false</returns>
+        </member>
+        <member name="M:StringExtensions.ToTitleCase(System.String)">
+            <summary>
+            Converts a string to title case
+            </summary>
+            <param name="source">The string to convert</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:StringExtensions.FirstCharactersOfEachWord(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Returns a string containing only the first character of each word in the source string.
+            </summary>
+            <param name="source">Any string</param>
+            <param name="skipSingleCharacters">If true one character words will be skipped</param>
+            <param name="upperCaseAll">If true all characters will be converted to uppercase</param>
+            <returns>(string)</returns>
+        </member>
+        <member name="M:StringExtensions.IsNumeric(System.String)">
+            <summary>
+            Returns true if the string can conver to a number otherwise false
+            </summary>
+            <param name="source">Any string</param>
+            <returns>(bool)</returns>
+        </member>
+        <member name="M:StringExtensions.PadLeft(System.String,System.String,System.Int32)">
+            <summary>
+            Pads the left side of a string with a specific number of characters
+            </summary>
+            <param name="source">The string to pad</param>
+            <param name="padChar">The character to pad with</param>
+            <param name="numberOfChars">The number of characters to add to the left side of the string</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
