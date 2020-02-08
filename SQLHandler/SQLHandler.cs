@@ -8,9 +8,8 @@ using Zoeller;
 
 namespace DatabaseHelper
 {
-
     /// <summary>
-    /// Used for retriving data from a database
+    /// Used for retrieving data from a database
     /// </summary>
     public class SQLHandler : ISQLHandler
     {
