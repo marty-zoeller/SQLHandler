@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DataProvider</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\GIT\SQLHandler\SQLHandler\SQLHandler.xml</DocumentationFile>
+    <DocumentationFile>C:\GIT\SQLHandler\SQLHandler\DataProvider.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
