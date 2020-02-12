@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace DatabaseHelper
+namespace DataProvider
 {
     /// <summary>
     /// Parameters that are to be passed to a stored procedure.

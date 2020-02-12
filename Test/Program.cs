@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
-using DatabaseHelper;
+using DataProvider;
+using System.Configuration;
 
 namespace Test
 {
@@ -13,6 +14,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            string pword = ConfigurationManager.AppSettings["SQL_PASSWORD"];
+            Console.WriteLine(pword.Length);
             SQLHandler data = new SQLHandler();
             //ParameterSQL
             string conn = data.GetConnectionString("ZPC_App_Dev", "Dev");

@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Linq;
 using Zoeller;
 
-namespace DatabaseHelper
+namespace DataProvider
 {
     /// <summary>
     /// Used for retrieving data from a database
@@ -77,7 +77,7 @@ namespace DatabaseHelper
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        this.LoadParameters(command, storedProcedureName, parameters);
+                        parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
@@ -127,7 +127,7 @@ namespace DatabaseHelper
                 using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    this.LoadParameters(command, storedProcedureName, parameters);
+                    parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                     command.ExecuteNonQuery();
                     this.ReadOutputParameters(command, parameters);
@@ -228,7 +228,7 @@ namespace DatabaseHelper
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        this.LoadParameters(command, storedProcedureName, parameters);
+                        parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
@@ -291,7 +291,7 @@ namespace DatabaseHelper
                 using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    this.LoadParameters(command, storedProcedureName, parameters);
+                    parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                     command.ExecuteNonQuery();
                     this.ReadOutputParameters(command, parameters);
@@ -356,7 +356,7 @@ namespace DatabaseHelper
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        this.LoadParameters(command, storedProcedureName, parameters);
+                        parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
@@ -424,7 +424,7 @@ namespace DatabaseHelper
                 using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    this.LoadParameters(command, storedProcedureName, parameters);
+                    parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                     command.ExecuteNonQuery();
                     this.ReadOutputParameters(command, parameters);
@@ -460,7 +460,7 @@ namespace DatabaseHelper
                 using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    this.LoadParameters(command, storedProcedureName, parameters);
+                    parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                     command.ExecuteNonQuery();
                     this.ReadOutputParameters(command, parameters);
@@ -494,7 +494,7 @@ namespace DatabaseHelper
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        this.LoadParameters(command, storedProcedureName, parameters);
+                        parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
@@ -541,7 +541,7 @@ namespace DatabaseHelper
                 using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    this.LoadParameters(command, storedProcedureName, parameters);
+                    parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                     command.ExecuteNonQuery();
                     this.ReadOutputParameters(command, parameters);
@@ -580,7 +580,7 @@ namespace DatabaseHelper
                     using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        this.LoadParameters(command, storedProcedureName, parameters);
+                        parameters = this.LoadParameters(command, storedProcedureName, parameters);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
@@ -601,12 +601,16 @@ namespace DatabaseHelper
 
         #region "Private Methods"
 
-        private void LoadParameters(SqlCommand command, string storedProcedureName, List<ParameterSQL> parameters)
+        private List<ParameterSQL> LoadParameters(SqlCommand command, string storedProcedureName, List<ParameterSQL> parameters)
         {
             ParameterSQL parm;
             SqlParameter tempParm = null;
             List<ParameterSQL> procedureParms = this.StoredProcedureParameters(command, storedProcedureName);
 
+            if (parameters == null)
+            {
+                parameters = new List<ParameterSQL>();
+            }
             command.Parameters.Clear();
 
             foreach (ParameterSQL parameter in parameters)
@@ -641,6 +645,8 @@ namespace DatabaseHelper
                     Size = 0
                 });
             }
+
+            return parameters;
         }
 
         /// <summary>

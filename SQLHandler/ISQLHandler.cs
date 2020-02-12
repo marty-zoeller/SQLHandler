@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 
-namespace DatabaseHelper
+namespace DataProvider
 {
     /// <summary>
     /// Interface for SQLHandler class
